@@ -3,7 +3,7 @@
 <div id="cards">
   <% @cards.each do |card| %>
     <div>
-      <%= card.name %>
+      <%= link_to card.name, card %>
       <%= card.supertype %>
       <%= card.hp %>
     </div>
