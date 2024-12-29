@@ -1,0 +1,11 @@
+<h1>Cards#index</h1>
+
+<div id="cards">
+  <% @cards.each do |card| %>
+    <div>
+      <%= link_to card.name, card %>
+      <%= card.supertype %>
+      <%= card.hp %>
+    </div>
+  <% end %>
+</div>
