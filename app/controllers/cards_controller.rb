@@ -15,5 +15,17 @@ class CardsController < ApplicationController
   end
 
   def create
+    @card = Card.new(card_params)
+    if @card.save
+      redirect_to @card
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def card_params
+    params.expect(card: [:name, :hp, :supertype])
   end
 end
