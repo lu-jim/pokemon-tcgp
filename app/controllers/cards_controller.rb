@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
-  before_action :set_card, only: %i[show edit update]
+  before_action :set_card, only: %i[show edit update destroy]
+
   def index
     @cards = Card.all
   end
@@ -29,6 +30,11 @@ class CardsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @card.destroy
+    redirect_to cards_path
   end
 
   private

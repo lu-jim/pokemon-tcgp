@@ -6,4 +6,6 @@
 
 
 <%= link_to "Back", cards_path %>
-<%= link_to "Edit", edit_cards_path(@card) %>
+<%= link_to "Edit", edit_card_path(@card) %>
+<%= button_to "Delete", @card, method: :delete, data: {
+  turbo_confirm: "Are you sure?" } %>
