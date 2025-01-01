@@ -1,0 +1,12 @@
+<% content_for :title, "Editing deck" %>
+
+<h1>Editing deck</h1>
+
+<%= render "form", deck: @deck %>
+
+<br>
+
+<div>
+  <%= link_to "Show this deck", @deck %> |
+  <%= link_to "Back to decks", decks_path %>
+</div>
