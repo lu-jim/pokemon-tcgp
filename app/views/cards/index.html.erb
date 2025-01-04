@@ -1,6 +1,6 @@
 <h1>Cards#index</h1>
 
-<%= link_to "New card", new_card_path %>
+<%= link_to "New card", new_card_path if authenticated? %>
 
 <div id="cards">
   <% @cards.each do |card| %>

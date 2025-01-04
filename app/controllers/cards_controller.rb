@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: %i[show edit update destroy]
+  allow_unauthenticated_access only: %i[index show]
 
   def index
     @cards = Card.all

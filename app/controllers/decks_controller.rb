@@ -1,5 +1,6 @@
 class DecksController < ApplicationController
   before_action :set_deck, only: %i[show edit update destroy]
+  allow_unauthenticated_access only: %i[index show]
 
   # GET /decks or /decks.json
   def index
