@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-  before_action :set_deck, only: %i[ show edit update destroy ]
+  before_action :set_deck, only: %i[show edit update destroy]
 
   # GET /decks or /decks.json
   def index
@@ -58,13 +58,14 @@ class DecksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_deck
-      @deck = Deck.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def deck_params
-      params.expect(deck: [ :deckname ])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_deck
+    @deck = Deck.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def deck_params
+    params.expect(deck: [:deckname])
+  end
 end
