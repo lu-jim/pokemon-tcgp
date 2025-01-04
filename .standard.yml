@@ -1,0 +1,5 @@
+fix: true               # default: false
+
+plugins:                # default: []
+  - standard-rails
+  - standard-minitest

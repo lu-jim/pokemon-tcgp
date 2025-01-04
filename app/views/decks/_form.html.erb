@@ -1,0 +1,22 @@
+<%= form_with(model: deck) do |form| %>
+  <% if deck.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(deck.errors.count, "error") %> prohibited this deck from being saved:</h2>
+
+      <ul>
+        <% deck.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :deckname, style: "display: block" %>
+    <%= form.text_field :deckname %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+<% content_for :title, "New deck" %>
+
+<h1>New deck</h1>
+
+<%= render "form", deck: @deck %>
+
+<br>
+
+<div>
+  <%= link_to "Back to decks", decks_path %>
+</div>

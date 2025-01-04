@@ -10,11 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_10_221135) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_01_225033) do
   create_table "cards", force: :cascade do |t|
     t.string "name"
     t.string "supertype"
     t.string "hp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "decks", force: :cascade do |t|
+    t.string "deckname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
