@@ -3,11 +3,7 @@ require "test_helper"
 class DecksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @deck = decks(:one)
-
-    post session_path, params: { 
-      email_address: "one@example.com",
-      password: "password"
-    }
+    sign_in(users(:one), "password")
   end
 
   test "should get index" do

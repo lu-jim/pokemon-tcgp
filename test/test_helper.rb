@@ -13,3 +13,17 @@ module ActiveSupport
     # Add more helper methods to be used by all tests here...
   end
 end
+
+# Auth helper for integration tests
+module AuthenticationHelper
+  def sign_in(user, fixture_password)
+    post(session_path, params: {
+      email_address: user.email_address,
+      password: fixture_password
+    })
+  end
+end
+
+class ActionDispatch::IntegrationTest
+  include AuthenticationHelper
+end
