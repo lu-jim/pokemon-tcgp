@@ -3,6 +3,7 @@ require "test_helper"
 class DecksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @deck = decks(:one)
+    sign_in(users(:one), "password")
   end
 
   test "should get index" do
